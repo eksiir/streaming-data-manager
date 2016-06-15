@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+    This is the default streaming data consumer configuration file.
+    The values here can be overwritten by a customized configuration file passed to the consumer executable or library.
+
+    Created by bbehzadi on 2/10/14.
+-->
+<StreamingDataConsumer xmlns="http://www.eksiir.com/consumer"
+                       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                       xsi:schemaLocation="http://www.eksiir.com/consumer ConsumerConfigSchema.xsd">
+
+    <StreamingData context="consumer">
+        <Carrier>KINESIS</Carrier>
+        <Model>ORDER</Model>
+        <Delimiter>|</Delimiter>
+        <ConsumerProcessor>KINESIS_REDSHIFT_CONNECTOR</ConsumerProcessor>
+    </StreamingData>
+    <Kinesis>
+        <Region>us-east-1</Region>
+        <EndPoint>https://kinesis.us-east-1.amazonaws.com</EndPoint>
+        <CredentialsPropertiesFileName>AwsCredentials.properties</CredentialsPropertiesFileName>
+        <StreamName>Orders</StreamName>
+        <Consumer>
+            <UniqueApplicationName>Orders-KINESIS_REDSHIFT_CONNECTOR-LATEST</UniqueApplicationName>
+            <InitialPositionInStream>LATEST</InitialPositionInStream>
+            <NumRetries>10</NumRetries>
+            <MaxRecordsNotCheckPointed>1000</MaxRecordsNotCheckPointed>
+            <CheckpointIntervalMillis>60000</CheckpointIntervalMillis>
+            <BackOffTimeMillis>3000</BackOffTimeMillis>
+            <CharacterSet>UTF-8</CharacterSet>
+            <MinRecordsPerBuffer>1000</MinRecordsPerBuffer>
+            <MinBytesPerBuffer>1048576</MinBytesPerBuffer>
+        </Consumer>
+        <Connector>
+            <Type>Redshift</Type>
+            <S3Bucket>streaming-data</S3Bucket>
+        </Connector>
+    </Kinesis>
+    <Redshift>
+        <EndPoint>https://redshift.us-east-1.amazonaws.com</EndPoint>
+        <CredentialsFileName>RedshiftCredentials.properties</CredentialsFileName>
+        <TableName>kinesis_test</TableName>
+    </Redshift>
+    <S3>
+        <EndPoint>https://s3.amazonaws.com</EndPoint>
+    </S3>
+</StreamingDataConsumer>

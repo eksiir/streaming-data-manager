@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.eksiir.com/consumer" xmlns="http://www.eksiir.com/consumer">
+  <xs:element name="StreamingDataConsumer" type="StreamingDataConsumerType">
+  </xs:element>
+  <xs:complexType name="ConnectorType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Type"/>
+      <xs:element type="xs:string" name="S3Bucket"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KinesisType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Region"/>
+      <xs:element type="xs:string" name="EndPoint"/>
+      <xs:element type="xs:string" name="CredentialsPropertiesFileName"/>
+      <xs:element type="xs:string" name="StreamName"/>
+      <xs:element type="ConsumerType" name="Consumer"/>
+      <xs:element type="ConnectorType" name="Connector"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StreamingDataType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Carrier"/>
+      <xs:element type="xs:string" name="Model"/>
+      <xs:element type="xs:string" name="Delimiter"/>
+      <xs:element type="xs:string" name="ConsumerProcessor"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="context"/>
+  </xs:complexType>
+  <xs:complexType name="StreamingDataConsumerType">
+    <xs:sequence>
+      <xs:element type="StreamingDataType" name="StreamingData"/>
+      <xs:element type="KinesisType" name="Kinesis"/>
+      <xs:element type="RedshiftType" name="Redshift"/>
+      <xs:element type="S3Type" name="S3"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="S3Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="EndPoint"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConsumerType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="UniqueApplicationName"/>
+      <xs:element type="xs:string" name="InitialPositionInStream"/>
+      <xs:element type="xs:string" name="NumRetries"/>
+      <xs:element type="xs:string" name="MaxRecordsNotCheckPointed"/>
+      <xs:element type="xs:string" name="CheckpointIntervalMillis"/>
+      <xs:element type="xs:string" name="BackOffTimeMillis"/>
+      <xs:element type="xs:string" name="CharacterSet"/>
+      <xs:element type="xs:string" name="MinRecordsPerBuffer"/>
+      <xs:element type="xs:string" name="MinBytesPerBuffer"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RedshiftType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="EndPoint"/>
+      <xs:element type="xs:string" name="CredentialsFileName"/>
+      <xs:element type="xs:string" name="TableName"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

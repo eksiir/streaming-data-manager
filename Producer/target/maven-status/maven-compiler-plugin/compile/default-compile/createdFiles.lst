@@ -1,0 +1,10 @@
+com/eksiir/StreamingDataManager/Producer/InputProcessor/LogFileProcessor/LogFileTailer.class
+com/eksiir/StreamingDataManager/Producer/CarrierPublisher/CarrierPublisher.class
+com/eksiir/StreamingDataManager/Producer/ProducerConfig.class
+com/eksiir/StreamingDataManager/Producer/ProducerControllerFactory.class
+com/eksiir/StreamingDataManager/Producer/CarrierPublisher/Kinesis/KinesisPublisher.class
+com/eksiir/StreamingDataManager/Producer/InputProcessor/InputProcessor.class
+com/eksiir/StreamingDataManager/Producer/InputProcessor/LogFileProcessor/LogFileTailer$1.class
+com/eksiir/StreamingDataManager/Producer/ProducerController.class
+com/eksiir/StreamingDataManager/Producer/ProducerControllerFactory$1.class
+com/eksiir/StreamingDataManager/Producer/ProducerController$1.class

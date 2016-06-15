@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.eksiir.com/producer" xmlns="http://www.eksiir.com/producer">
+  <xs:element name="StreamingDataProducer" type="StreamingDataProducerType">
+  </xs:element>
+  <xs:complexType name="KinesisType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Region"/>
+      <xs:element type="xs:string" name="EndPoint"/>
+      <xs:element type="xs:string" name="CredentialsPropertiesFileName"/>
+      <xs:element type="xs:string" name="StreamName"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StreamingDataType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Source"/>
+      <xs:element type="xs:string" name="Carrier"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="context"/>
+  </xs:complexType>
+  <xs:complexType name="LogTailerType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Filename"/>
+      <xs:element type="xs:string" name="MillisecDelay"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StreamingDataProducerType">
+    <xs:sequence>
+      <xs:element type="StreamingDataType" name="StreamingData"/>
+      <xs:element type="LogTailerType" name="LogTailer"/>
+      <xs:element type="KinesisType" name="Kinesis"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

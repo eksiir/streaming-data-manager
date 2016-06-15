@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+    This is an example of the streaming data consumer configuration file.
+    Created by bbehzadi on 2/10/14.
+-->
+<StreamingDataConsumer>
+    <StreamingData context="consumer">
+        <ConsumerProcessor>CARRIER_OUT</ConsumerProcessor>
+    </StreamingData>
+    <Kinesis>
+        <Consumer>
+            <UniqueApplicationName>Orders-CARRIER_OUT-LATEST</UniqueApplicationName>
+            <InitialPositionInStream>LATEST</InitialPositionInStream>
+            <MaxRecordsNotCheckPointed>10</MaxRecordsNotCheckPointed>
+            <CheckpointIntervalMillis>5000</CheckpointIntervalMillis>
+            <MinRecordsPerBuffer>1</MinRecordsPerBuffer>
+            <MinBytesPerBuffer>128</MinBytesPerBuffer>
+        </Consumer>
+    </Kinesis>
+</StreamingDataConsumer>
