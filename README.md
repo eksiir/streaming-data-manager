@@ -30,11 +30,21 @@ The streaming data processor is the target destination of this framework.  e.g. 
 the AWS Redshift, the copier to AWS S3, or a streaming data analytics application and any such external independent
 system.
 
+Unit Tests Requirements
+=======================
+The following are required to run unit tests successfully:
+
+* A valid AWS Kinesis security token is needed.
+
+* /var/log/StreamingDataManager/ directory should exist with proper read/write permissions for the user running the tests.
+
 Build Instructions
 ===================
 Use maven to build and install all the streaming data modules.
 
     $ mvn clean install
+
+If the above unit test requirements cannot be met pass -DskipTests as an argument to mvn.
 
 The producer and consumer modules can be built and installed separately using the default maven goals.
 See their respective README.md files.

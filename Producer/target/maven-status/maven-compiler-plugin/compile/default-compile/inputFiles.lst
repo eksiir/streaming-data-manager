@@ -1,7 +1,0 @@
-/Users/bbehzadi/Projects/eksiir/streaming-data-manager/Producer/src/main/java/com/eksiir/StreamingDataManager/Producer/ProducerControllerFactory.java
-/Users/bbehzadi/Projects/eksiir/streaming-data-manager/Producer/src/main/java/com/eksiir/StreamingDataManager/Producer/ProducerController.java
-/Users/bbehzadi/Projects/eksiir/streaming-data-manager/Producer/src/main/java/com/eksiir/StreamingDataManager/Producer/CarrierPublisher/Kinesis/KinesisPublisher.java
-/Users/bbehzadi/Projects/eksiir/streaming-data-manager/Producer/src/main/java/com/eksiir/StreamingDataManager/Producer/InputProcessor/InputProcessor.java
-/Users/bbehzadi/Projects/eksiir/streaming-data-manager/Producer/src/main/java/com/eksiir/StreamingDataManager/Producer/ProducerConfig.java
-/Users/bbehzadi/Projects/eksiir/streaming-data-manager/Producer/src/main/java/com/eksiir/StreamingDataManager/Producer/CarrierPublisher/CarrierPublisher.java
-/Users/bbehzadi/Projects/eksiir/streaming-data-manager/Producer/src/main/java/com/eksiir/StreamingDataManager/Producer/InputProcessor/LogFileProcessor/LogFileTailer.java

@@ -3,12 +3,22 @@ Streaming Data Consumer Module
 The input of the streaming data consumer is the same streaming data carrier that the producer(s) publish to
 and its output is passed on to the streaming data processor.
 
+Unit Tests Requirements
+=======================
+The following are required to run unit tests successfully:
+
+* A valid AWS Kinesis security token is needed.
+
+* /var/log/StreamingDataManager/ directory should exist with proper read/write permissions for the user running the tests.
+
 Build Instructions
 ===================
 The consumer can be either an independent executable application or used as a library using the default maven goals.
 e.g.
 
     $ mvn clean install
+
+If the above unit test requirements cannot be met pass -DskipTests as an argument to mvn.
 
 Creates the consumer library jar and the independent consumer application as
 <b>target/StreamingDataConsumer-\<version\>.tar.gz</b>.

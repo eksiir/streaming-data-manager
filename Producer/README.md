@@ -3,12 +3,22 @@ Streaming Data Producer Module
 The input of the streaming data producer is the source of the streaming data.
 The output of the producer is the streaming data carrier.
 
+Unit Tests Requirements
+=======================
+The following are required to run unit tests successfully:
+
+* A valid AWS Kinesis security token is needed.
+
+* /var/log/StreamingDataManager/ directory should exist with proper read/write permissions for the user running the tests.
+
 Build Instructions
 ===================
 The producer can be either an independent executable application or used as a library using the default maven goals.
 e.g.
 
     $ mvn clean install
+
+If the above unit test requirements cannot be met pass -DskipTests as an argument to mvn.
 
 Creates the producer library jar and the independent producer application as
 <b>target/StreamingDataProducer-\<version\>.tar.gz</b>.

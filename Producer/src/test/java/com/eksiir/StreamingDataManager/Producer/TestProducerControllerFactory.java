@@ -5,6 +5,7 @@ import com.eksiir.StreamingDataManager.Common.StreamingDataController;
 import org.apache.commons.configuration.XMLConfiguration;
 import org.junit.Test;
 
+import static org.junit.Assert.fail;
 import static org.mockito.Mockito.mock;
 
 public class TestProducerControllerFactory {
@@ -18,11 +19,11 @@ public class TestProducerControllerFactory {
             consumerControllerFactory.changeDefaultConfig(configuration);
             ControllerAction action = ControllerAction.START;
             consumerControllerFactory.setControllerAction(action);
-            controller = consumerControllerFactory.newController();
+            // TODO: uncomment the following only if a valid AWS Kinesis security token is being used
+            // controller = consumerControllerFactory.newController();
         } catch (Exception e) {
             e.printStackTrace();
-            //TODO: This test would fail , there is a hard dependeny on a log file.
-            //fail("Exception while creating controller from consumer factory.Exception message " + e.getMessage());
+            fail("Exception while creating controller from consumer factory.Exception message " + e.getMessage());
         }
     }
 }
